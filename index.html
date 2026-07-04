@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Band-SCNet-RT Audio Demo</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f7f5;
+      --panel: #ffffff;
+      --text: #202020;
+      --muted: #666666;
+      --line: #d8d8d2;
+      --accent: #1b5e8f;
+      --accent-soft: #eef6fb;
+      --highlight: #edf7f1;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
+    header {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 36px 24px 20px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 32px;
+      letter-spacing: 0;
+    }
+    h2 {
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+    h3 {
+      margin: 22px 0 10px;
+      font-size: 16px;
+    }
+    p {
+      margin: 0;
+      color: var(--muted);
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+    nav a, .anchor {
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 6px;
+      padding: 5px 9px;
+      font-size: 14px;
+    }
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px 40px;
+    }
+    .clip {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+      margin: 18px 0;
+      box-shadow: 0 8px 24px rgba(40, 40, 40, 0.05);
+    }
+    .clip-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: start;
+    }
+    .mix-row {
+      display: grid;
+      grid-template-columns: 210px minmax(260px, 1fr);
+      gap: 12px;
+      align-items: center;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 14px 0;
+      margin-top: 16px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      margin-top: 8px;
+    }
+    th, td {
+      border-top: 1px solid var(--line);
+      padding: 10px 8px;
+      vertical-align: middle;
+      text-align: left;
+    }
+    th:first-child {
+      width: 28%;
+      font-weight: 650;
+    }
+    tbody tr:first-child {
+      background: var(--highlight);
+    }
+    tbody tr:first-child th:first-child {
+      color: #145338;
+    }
+    tbody tr:hover {
+      background: var(--accent-soft);
+    }
+    audio {
+      width: 100%;
+      min-width: 180px;
+      height: 34px;
+    }
+    footer {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px 32px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    @media (max-width: 760px) {
+      header, main, footer { padding-left: 14px; padding-right: 14px; }
+      .clip { padding: 14px; }
+      .mix-row { grid-template-columns: 1fr; }
+      table, thead, tbody, tr, th, td { display: block; }
+      thead { display: none; }
+      tr { border-top: 1px solid var(--line); padding: 8px 0; }
+      th, td { border: 0; padding: 5px 0; }
+      th:first-child { width: auto; }
+      td::before {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+      }
+      td:nth-child(2)::before { content: "Vocals"; }
+      td:nth-child(3)::before { content: "Accompaniment"; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Band-SCNet-RT Audio Demo</h1>
+    <p>Listen to each mixture and compare separated vocals and accompaniment from the proposed model and all baselines.</p>
+    <nav>
+      <a href="#500_miles_42_50">500 Miles - Inside Llewyn Davis, Excerpt 1</a><a href="#500_miles_90_100">500 Miles - Inside Llewyn Davis, Excerpt 2</a><a href="#whitney_70_76p5">Whitney Houston - I Will Always Love You</a><a href="#malaika_27_35">Nyashinski - Malaika</a>
+    </nav>
+  </header>
+  <main>
+    
+            <section class="clip" id="500_miles_42_50">
+              <div class="clip-header">
+                <div>
+                  <h2>500 Miles - Inside Llewyn Davis, Excerpt 1</h2>
+                  <p>Mixture and separated estimates for vocals and accompaniment.</p>
+                </div>
+                <a class="anchor" href="#500_miles_42_50">#</a>
+              </div>
+
+              <div class="mix-row">
+                <strong>Original mixture</strong>
+                <audio controls preload="none" src="audio/500_miles_42_50/mix.mp3"></audio>
+              </div>
+
+              <h3>All comparisons</h3>
+                <table>
+                  <thead>
+                    <tr><th>Model</th><th>Vocals</th><th>Accompaniment</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><th>Proposed Band-SCNet-RT</th><td><audio controls preload="none" src="audio/500_miles_42_50/ours_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/ours_acc.mp3"></audio></td></tr>
+<tr><th>Apollo</th><td><audio controls preload="none" src="audio/500_miles_42_50/Apollo_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/Apollo_acc.mp3"></audio></td></tr>
+<tr><th>BandIt-BSRNN</th><td><audio controls preload="none" src="audio/500_miles_42_50/BandIt_BSRNN_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/BandIt_BSRNN_acc.mp3"></audio></td></tr>
+<tr><th>DTTNet</th><td><audio controls preload="none" src="audio/500_miles_42_50/DTTNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/DTTNet_acc.mp3"></audio></td></tr>
+<tr><th>HT Demucs</th><td><audio controls preload="none" src="audio/500_miles_42_50/demucs_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/demucs_acc.mp3"></audio></td></tr>
+<tr><th>MDX23C TFC-TDF-UNet</th><td><audio controls preload="none" src="audio/500_miles_42_50/MDX23C_TFC_TDF_UNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/MDX23C_TFC_TDF_UNet_acc.mp3"></audio></td></tr>
+<tr><th>SCNet</th><td><audio controls preload="none" src="audio/500_miles_42_50/SCNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/SCNet_acc.mp3"></audio></td></tr>
+<tr><th>Apollo, streaming</th><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_Apollo_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_Apollo_acc.mp3"></audio></td></tr>
+<tr><th>BandIt-BSRNN, streaming</th><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_BandIt_BSRNN_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_BandIt_BSRNN_acc.mp3"></audio></td></tr>
+<tr><th>DTTNet, streaming</th><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_DTTNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_DTTNet_acc.mp3"></audio></td></tr>
+<tr><th>HT Demucs, streaming</th><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_demucs_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_demucs_acc.mp3"></audio></td></tr>
+<tr><th>MDX23C TFC-TDF-UNet, streaming</th><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_MDX23C_TFC_TDF_UNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_MDX23C_TFC_TDF_UNet_acc.mp3"></audio></td></tr>
+<tr><th>SCNet, streaming</th><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_SCNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_SCNet_acc.mp3"></audio></td></tr>
+                  </tbody>
+                </table>
+            </section>
+            
+            <section class="clip" id="500_miles_90_100">
+              <div class="clip-header">
+                <div>
+                  <h2>500 Miles - Inside Llewyn Davis, Excerpt 2</h2>
+                  <p>Mixture and separated estimates for vocals and accompaniment.</p>
+                </div>
+                <a class="anchor" href="#500_miles_90_100">#</a>
+              </div>
+
+              <div class="mix-row">
+                <strong>Original mixture</strong>
+                <audio controls preload="none" src="audio/500_miles_90_100/mix.mp3"></audio>
+              </div>
+
+              <h3>All comparisons</h3>
+                <table>
+                  <thead>
+                    <tr><th>Model</th><th>Vocals</th><th>Accompaniment</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><th>Proposed Band-SCNet-RT</th><td><audio controls preload="none" src="audio/500_miles_90_100/ours_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/ours_acc.mp3"></audio></td></tr>
+<tr><th>Apollo</th><td><audio controls preload="none" src="audio/500_miles_90_100/Apollo_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/Apollo_acc.mp3"></audio></td></tr>
+<tr><th>BandIt-BSRNN</th><td><audio controls preload="none" src="audio/500_miles_90_100/BandIt_BSRNN_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/BandIt_BSRNN_acc.mp3"></audio></td></tr>
+<tr><th>DTTNet</th><td><audio controls preload="none" src="audio/500_miles_90_100/DTTNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/DTTNet_acc.mp3"></audio></td></tr>
+<tr><th>HT Demucs</th><td><audio controls preload="none" src="audio/500_miles_90_100/demucs_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/demucs_acc.mp3"></audio></td></tr>
+<tr><th>MDX23C TFC-TDF-UNet</th><td><audio controls preload="none" src="audio/500_miles_90_100/MDX23C_TFC_TDF_UNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/MDX23C_TFC_TDF_UNet_acc.mp3"></audio></td></tr>
+<tr><th>SCNet</th><td><audio controls preload="none" src="audio/500_miles_90_100/SCNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/SCNet_acc.mp3"></audio></td></tr>
+<tr><th>Apollo, streaming</th><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_Apollo_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_Apollo_acc.mp3"></audio></td></tr>
+<tr><th>BandIt-BSRNN, streaming</th><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_BandIt_BSRNN_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_BandIt_BSRNN_acc.mp3"></audio></td></tr>
+<tr><th>DTTNet, streaming</th><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_DTTNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_DTTNet_acc.mp3"></audio></td></tr>
+<tr><th>HT Demucs, streaming</th><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_demucs_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_demucs_acc.mp3"></audio></td></tr>
+<tr><th>MDX23C TFC-TDF-UNet, streaming</th><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_MDX23C_TFC_TDF_UNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_MDX23C_TFC_TDF_UNet_acc.mp3"></audio></td></tr>
+<tr><th>SCNet, streaming</th><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_SCNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_SCNet_acc.mp3"></audio></td></tr>
+                  </tbody>
+                </table>
+            </section>
+            
+            <section class="clip" id="whitney_70_76p5">
+              <div class="clip-header">
+                <div>
+                  <h2>Whitney Houston - I Will Always Love You</h2>
+                  <p>Mixture and separated estimates for vocals and accompaniment.</p>
+                </div>
+                <a class="anchor" href="#whitney_70_76p5">#</a>
+              </div>
+
+              <div class="mix-row">
+                <strong>Original mixture</strong>
+                <audio controls preload="none" src="audio/whitney_70_76p5/mix.mp3"></audio>
+              </div>
+
+              <h3>All comparisons</h3>
+                <table>
+                  <thead>
+                    <tr><th>Model</th><th>Vocals</th><th>Accompaniment</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><th>Proposed Band-SCNet-RT</th><td><audio controls preload="none" src="audio/whitney_70_76p5/ours_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/ours_acc.mp3"></audio></td></tr>
+<tr><th>Apollo</th><td><audio controls preload="none" src="audio/whitney_70_76p5/Apollo_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/Apollo_acc.mp3"></audio></td></tr>
+<tr><th>BandIt-BSRNN</th><td><audio controls preload="none" src="audio/whitney_70_76p5/BandIt_BSRNN_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/BandIt_BSRNN_acc.mp3"></audio></td></tr>
+<tr><th>DTTNet</th><td><audio controls preload="none" src="audio/whitney_70_76p5/DTTNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/DTTNet_acc.mp3"></audio></td></tr>
+<tr><th>HT Demucs</th><td><audio controls preload="none" src="audio/whitney_70_76p5/demucs_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/demucs_acc.mp3"></audio></td></tr>
+<tr><th>MDX23C TFC-TDF-UNet</th><td><audio controls preload="none" src="audio/whitney_70_76p5/MDX23C_TFC_TDF_UNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/MDX23C_TFC_TDF_UNet_acc.mp3"></audio></td></tr>
+<tr><th>SCNet</th><td><audio controls preload="none" src="audio/whitney_70_76p5/SCNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/SCNet_acc.mp3"></audio></td></tr>
+<tr><th>Apollo, streaming</th><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_Apollo_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_Apollo_acc.mp3"></audio></td></tr>
+<tr><th>BandIt-BSRNN, streaming</th><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_BandIt_BSRNN_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_BandIt_BSRNN_acc.mp3"></audio></td></tr>
+<tr><th>DTTNet, streaming</th><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_DTTNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_DTTNet_acc.mp3"></audio></td></tr>
+<tr><th>HT Demucs, streaming</th><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_demucs_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_demucs_acc.mp3"></audio></td></tr>
+<tr><th>MDX23C TFC-TDF-UNet, streaming</th><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_MDX23C_TFC_TDF_UNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_MDX23C_TFC_TDF_UNet_acc.mp3"></audio></td></tr>
+<tr><th>SCNet, streaming</th><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_SCNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_SCNet_acc.mp3"></audio></td></tr>
+                  </tbody>
+                </table>
+            </section>
+            
+            <section class="clip" id="malaika_27_35">
+              <div class="clip-header">
+                <div>
+                  <h2>Nyashinski - Malaika</h2>
+                  <p>Mixture and separated estimates for vocals and accompaniment.</p>
+                </div>
+                <a class="anchor" href="#malaika_27_35">#</a>
+              </div>
+
+              <div class="mix-row">
+                <strong>Original mixture</strong>
+                <audio controls preload="none" src="audio/malaika_27_35/mix.mp3"></audio>
+              </div>
+
+              <h3>All comparisons</h3>
+                <table>
+                  <thead>
+                    <tr><th>Model</th><th>Vocals</th><th>Accompaniment</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><th>Proposed Band-SCNet-RT</th><td><audio controls preload="none" src="audio/malaika_27_35/ours_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/ours_acc.mp3"></audio></td></tr>
+<tr><th>Apollo</th><td><audio controls preload="none" src="audio/malaika_27_35/Apollo_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/Apollo_acc.mp3"></audio></td></tr>
+<tr><th>BandIt-BSRNN</th><td><audio controls preload="none" src="audio/malaika_27_35/BandIt_BSRNN_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/BandIt_BSRNN_acc.mp3"></audio></td></tr>
+<tr><th>DTTNet</th><td><audio controls preload="none" src="audio/malaika_27_35/DTTNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/DTTNet_acc.mp3"></audio></td></tr>
+<tr><th>HT Demucs</th><td><audio controls preload="none" src="audio/malaika_27_35/demucs_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/demucs_acc.mp3"></audio></td></tr>
+<tr><th>MDX23C TFC-TDF-UNet</th><td><audio controls preload="none" src="audio/malaika_27_35/MDX23C_TFC_TDF_UNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/MDX23C_TFC_TDF_UNet_acc.mp3"></audio></td></tr>
+<tr><th>SCNet</th><td><audio controls preload="none" src="audio/malaika_27_35/SCNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/SCNet_acc.mp3"></audio></td></tr>
+<tr><th>Apollo, streaming</th><td><audio controls preload="none" src="audio/malaika_27_35/streaming_Apollo_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/streaming_Apollo_acc.mp3"></audio></td></tr>
+<tr><th>BandIt-BSRNN, streaming</th><td><audio controls preload="none" src="audio/malaika_27_35/streaming_BandIt_BSRNN_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/streaming_BandIt_BSRNN_acc.mp3"></audio></td></tr>
+<tr><th>DTTNet, streaming</th><td><audio controls preload="none" src="audio/malaika_27_35/streaming_DTTNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/streaming_DTTNet_acc.mp3"></audio></td></tr>
+<tr><th>HT Demucs, streaming</th><td><audio controls preload="none" src="audio/malaika_27_35/streaming_demucs_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/streaming_demucs_acc.mp3"></audio></td></tr>
+<tr><th>MDX23C TFC-TDF-UNet, streaming</th><td><audio controls preload="none" src="audio/malaika_27_35/streaming_MDX23C_TFC_TDF_UNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/streaming_MDX23C_TFC_TDF_UNet_acc.mp3"></audio></td></tr>
+<tr><th>SCNet, streaming</th><td><audio controls preload="none" src="audio/malaika_27_35/streaming_SCNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/streaming_SCNet_acc.mp3"></audio></td></tr>
+                  </tbody>
+                </table>
+            </section>
+            
+  </main>
+  <footer>
+    Audio files are converted from wav to mp3 at 192 kbps for convenient web playback. Source mapping is preserved in manifest.csv.
+  </footer>
+</body>
+</html>
