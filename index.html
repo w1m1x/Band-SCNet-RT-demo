@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -150,7 +150,7 @@
 <body>
   <header>
     <h1>Band-SCNet-RT Audio Demo</h1>
-    <p>Listen to each mixture and compare separated vocals and accompaniment from the proposed model and all baselines.</p>
+    <p>Listen to each mixture and compare separated vocals and accompaniment. The proposed model is shown first, followed by streaming baselines and then non-streaming baselines.</p>
     <nav>
       <a href="#500_miles_42_50">500 Miles - Inside Llewyn Davis, Excerpt 1</a><a href="#500_miles_90_100">500 Miles - Inside Llewyn Davis, Excerpt 2</a><a href="#whitney_70_76p5">Whitney Houston - I Will Always Love You</a><a href="#malaika_27_35">Nyashinski - Malaika</a>
     </nav>
@@ -171,21 +171,21 @@
                 <audio controls preload="none" src="audio/500_miles_42_50/mix.mp3"></audio>
               </div>
 
-              <h3>All comparisons</h3>
+              <h3>Proposed model and comparisons</h3>
                 <table>
                   <thead>
                     <tr><th>Model</th><th>Vocals</th><th>Accompaniment</th></tr>
                   </thead>
                   <tbody>
                     <tr><th>Proposed Band-SCNet-RT</th><td><audio controls preload="none" src="audio/500_miles_42_50/ours_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/ours_acc.mp3"></audio></td></tr>
-<tr><th>DTTNet</th><td><audio controls preload="none" src="audio/500_miles_42_50/DTTNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/DTTNet_acc.mp3"></audio></td></tr>
-<tr><th>DTTNet, streaming</th><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_DTTNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_DTTNet_acc.mp3"></audio></td></tr>
-<tr><th>SCNet</th><td><audio controls preload="none" src="audio/500_miles_42_50/SCNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/SCNet_acc.mp3"></audio></td></tr>
-<tr><th>SCNet, streaming</th><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_SCNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_SCNet_acc.mp3"></audio></td></tr>
-<tr><th>MDX23C TFC-TDF-UNet</th><td><audio controls preload="none" src="audio/500_miles_42_50/MDX23C_TFC_TDF_UNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/MDX23C_TFC_TDF_UNet_acc.mp3"></audio></td></tr>
-<tr><th>MDX23C TFC-TDF-UNet, streaming</th><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_MDX23C_TFC_TDF_UNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_MDX23C_TFC_TDF_UNet_acc.mp3"></audio></td></tr>
-<tr><th>BandIt-BSRNN</th><td><audio controls preload="none" src="audio/500_miles_42_50/BandIt_BSRNN_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/BandIt_BSRNN_acc.mp3"></audio></td></tr>
-<tr><th>BandIt-BSRNN, streaming</th><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_BandIt_BSRNN_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_BandIt_BSRNN_acc.mp3"></audio></td></tr>
+                    <tr><th>DTTNet, streaming</th><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_DTTNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_DTTNet_acc.mp3"></audio></td></tr>
+                    <tr><th>SCNet, streaming</th><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_SCNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_SCNet_acc.mp3"></audio></td></tr>
+                    <tr><th>MDX23C TFC-TDF-UNet, streaming</th><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_MDX23C_TFC_TDF_UNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_MDX23C_TFC_TDF_UNet_acc.mp3"></audio></td></tr>
+                    <tr><th>BandIt-BSRNN, streaming</th><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_BandIt_BSRNN_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/streaming_BandIt_BSRNN_acc.mp3"></audio></td></tr>
+                    <tr><th>DTTNet</th><td><audio controls preload="none" src="audio/500_miles_42_50/DTTNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/DTTNet_acc.mp3"></audio></td></tr>
+                    <tr><th>SCNet</th><td><audio controls preload="none" src="audio/500_miles_42_50/SCNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/SCNet_acc.mp3"></audio></td></tr>
+                    <tr><th>MDX23C TFC-TDF-UNet</th><td><audio controls preload="none" src="audio/500_miles_42_50/MDX23C_TFC_TDF_UNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/MDX23C_TFC_TDF_UNet_acc.mp3"></audio></td></tr>
+                    <tr><th>BandIt-BSRNN</th><td><audio controls preload="none" src="audio/500_miles_42_50/BandIt_BSRNN_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_42_50/BandIt_BSRNN_acc.mp3"></audio></td></tr>
                   </tbody>
                 </table>
             </section>
@@ -204,21 +204,21 @@
                 <audio controls preload="none" src="audio/500_miles_90_100/mix.mp3"></audio>
               </div>
 
-              <h3>All comparisons</h3>
+              <h3>Proposed model and comparisons</h3>
                 <table>
                   <thead>
                     <tr><th>Model</th><th>Vocals</th><th>Accompaniment</th></tr>
                   </thead>
                   <tbody>
                     <tr><th>Proposed Band-SCNet-RT</th><td><audio controls preload="none" src="audio/500_miles_90_100/ours_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/ours_acc.mp3"></audio></td></tr>
-<tr><th>DTTNet</th><td><audio controls preload="none" src="audio/500_miles_90_100/DTTNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/DTTNet_acc.mp3"></audio></td></tr>
-<tr><th>DTTNet, streaming</th><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_DTTNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_DTTNet_acc.mp3"></audio></td></tr>
-<tr><th>SCNet</th><td><audio controls preload="none" src="audio/500_miles_90_100/SCNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/SCNet_acc.mp3"></audio></td></tr>
-<tr><th>SCNet, streaming</th><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_SCNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_SCNet_acc.mp3"></audio></td></tr>
-<tr><th>MDX23C TFC-TDF-UNet</th><td><audio controls preload="none" src="audio/500_miles_90_100/MDX23C_TFC_TDF_UNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/MDX23C_TFC_TDF_UNet_acc.mp3"></audio></td></tr>
-<tr><th>MDX23C TFC-TDF-UNet, streaming</th><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_MDX23C_TFC_TDF_UNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_MDX23C_TFC_TDF_UNet_acc.mp3"></audio></td></tr>
-<tr><th>BandIt-BSRNN</th><td><audio controls preload="none" src="audio/500_miles_90_100/BandIt_BSRNN_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/BandIt_BSRNN_acc.mp3"></audio></td></tr>
-<tr><th>BandIt-BSRNN, streaming</th><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_BandIt_BSRNN_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_BandIt_BSRNN_acc.mp3"></audio></td></tr>
+                    <tr><th>DTTNet, streaming</th><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_DTTNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_DTTNet_acc.mp3"></audio></td></tr>
+                    <tr><th>SCNet, streaming</th><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_SCNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_SCNet_acc.mp3"></audio></td></tr>
+                    <tr><th>MDX23C TFC-TDF-UNet, streaming</th><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_MDX23C_TFC_TDF_UNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_MDX23C_TFC_TDF_UNet_acc.mp3"></audio></td></tr>
+                    <tr><th>BandIt-BSRNN, streaming</th><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_BandIt_BSRNN_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/streaming_BandIt_BSRNN_acc.mp3"></audio></td></tr>
+                    <tr><th>DTTNet</th><td><audio controls preload="none" src="audio/500_miles_90_100/DTTNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/DTTNet_acc.mp3"></audio></td></tr>
+                    <tr><th>SCNet</th><td><audio controls preload="none" src="audio/500_miles_90_100/SCNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/SCNet_acc.mp3"></audio></td></tr>
+                    <tr><th>MDX23C TFC-TDF-UNet</th><td><audio controls preload="none" src="audio/500_miles_90_100/MDX23C_TFC_TDF_UNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/MDX23C_TFC_TDF_UNet_acc.mp3"></audio></td></tr>
+                    <tr><th>BandIt-BSRNN</th><td><audio controls preload="none" src="audio/500_miles_90_100/BandIt_BSRNN_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/500_miles_90_100/BandIt_BSRNN_acc.mp3"></audio></td></tr>
                   </tbody>
                 </table>
             </section>
@@ -237,21 +237,21 @@
                 <audio controls preload="none" src="audio/whitney_70_76p5/mix.mp3"></audio>
               </div>
 
-              <h3>All comparisons</h3>
+              <h3>Proposed model and comparisons</h3>
                 <table>
                   <thead>
                     <tr><th>Model</th><th>Vocals</th><th>Accompaniment</th></tr>
                   </thead>
                   <tbody>
                     <tr><th>Proposed Band-SCNet-RT</th><td><audio controls preload="none" src="audio/whitney_70_76p5/ours_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/ours_acc.mp3"></audio></td></tr>
-<tr><th>DTTNet</th><td><audio controls preload="none" src="audio/whitney_70_76p5/DTTNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/DTTNet_acc.mp3"></audio></td></tr>
-<tr><th>DTTNet, streaming</th><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_DTTNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_DTTNet_acc.mp3"></audio></td></tr>
-<tr><th>SCNet</th><td><audio controls preload="none" src="audio/whitney_70_76p5/SCNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/SCNet_acc.mp3"></audio></td></tr>
-<tr><th>SCNet, streaming</th><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_SCNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_SCNet_acc.mp3"></audio></td></tr>
-<tr><th>MDX23C TFC-TDF-UNet</th><td><audio controls preload="none" src="audio/whitney_70_76p5/MDX23C_TFC_TDF_UNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/MDX23C_TFC_TDF_UNet_acc.mp3"></audio></td></tr>
-<tr><th>MDX23C TFC-TDF-UNet, streaming</th><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_MDX23C_TFC_TDF_UNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_MDX23C_TFC_TDF_UNet_acc.mp3"></audio></td></tr>
-<tr><th>BandIt-BSRNN</th><td><audio controls preload="none" src="audio/whitney_70_76p5/BandIt_BSRNN_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/BandIt_BSRNN_acc.mp3"></audio></td></tr>
-<tr><th>BandIt-BSRNN, streaming</th><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_BandIt_BSRNN_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_BandIt_BSRNN_acc.mp3"></audio></td></tr>
+                    <tr><th>DTTNet, streaming</th><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_DTTNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_DTTNet_acc.mp3"></audio></td></tr>
+                    <tr><th>SCNet, streaming</th><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_SCNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_SCNet_acc.mp3"></audio></td></tr>
+                    <tr><th>MDX23C TFC-TDF-UNet, streaming</th><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_MDX23C_TFC_TDF_UNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_MDX23C_TFC_TDF_UNet_acc.mp3"></audio></td></tr>
+                    <tr><th>BandIt-BSRNN, streaming</th><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_BandIt_BSRNN_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/streaming_BandIt_BSRNN_acc.mp3"></audio></td></tr>
+                    <tr><th>DTTNet</th><td><audio controls preload="none" src="audio/whitney_70_76p5/DTTNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/DTTNet_acc.mp3"></audio></td></tr>
+                    <tr><th>SCNet</th><td><audio controls preload="none" src="audio/whitney_70_76p5/SCNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/SCNet_acc.mp3"></audio></td></tr>
+                    <tr><th>MDX23C TFC-TDF-UNet</th><td><audio controls preload="none" src="audio/whitney_70_76p5/MDX23C_TFC_TDF_UNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/MDX23C_TFC_TDF_UNet_acc.mp3"></audio></td></tr>
+                    <tr><th>BandIt-BSRNN</th><td><audio controls preload="none" src="audio/whitney_70_76p5/BandIt_BSRNN_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/whitney_70_76p5/BandIt_BSRNN_acc.mp3"></audio></td></tr>
                   </tbody>
                 </table>
             </section>
@@ -270,21 +270,21 @@
                 <audio controls preload="none" src="audio/malaika_27_35/mix.mp3"></audio>
               </div>
 
-              <h3>All comparisons</h3>
+              <h3>Proposed model and comparisons</h3>
                 <table>
                   <thead>
                     <tr><th>Model</th><th>Vocals</th><th>Accompaniment</th></tr>
                   </thead>
                   <tbody>
                     <tr><th>Proposed Band-SCNet-RT</th><td><audio controls preload="none" src="audio/malaika_27_35/ours_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/ours_acc.mp3"></audio></td></tr>
-<tr><th>DTTNet</th><td><audio controls preload="none" src="audio/malaika_27_35/DTTNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/DTTNet_acc.mp3"></audio></td></tr>
-<tr><th>DTTNet, streaming</th><td><audio controls preload="none" src="audio/malaika_27_35/streaming_DTTNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/streaming_DTTNet_acc.mp3"></audio></td></tr>
-<tr><th>SCNet</th><td><audio controls preload="none" src="audio/malaika_27_35/SCNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/SCNet_acc.mp3"></audio></td></tr>
-<tr><th>SCNet, streaming</th><td><audio controls preload="none" src="audio/malaika_27_35/streaming_SCNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/streaming_SCNet_acc.mp3"></audio></td></tr>
-<tr><th>MDX23C TFC-TDF-UNet</th><td><audio controls preload="none" src="audio/malaika_27_35/MDX23C_TFC_TDF_UNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/MDX23C_TFC_TDF_UNet_acc.mp3"></audio></td></tr>
-<tr><th>MDX23C TFC-TDF-UNet, streaming</th><td><audio controls preload="none" src="audio/malaika_27_35/streaming_MDX23C_TFC_TDF_UNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/streaming_MDX23C_TFC_TDF_UNet_acc.mp3"></audio></td></tr>
-<tr><th>BandIt-BSRNN</th><td><audio controls preload="none" src="audio/malaika_27_35/BandIt_BSRNN_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/BandIt_BSRNN_acc.mp3"></audio></td></tr>
-<tr><th>BandIt-BSRNN, streaming</th><td><audio controls preload="none" src="audio/malaika_27_35/streaming_BandIt_BSRNN_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/streaming_BandIt_BSRNN_acc.mp3"></audio></td></tr>
+                    <tr><th>DTTNet, streaming</th><td><audio controls preload="none" src="audio/malaika_27_35/streaming_DTTNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/streaming_DTTNet_acc.mp3"></audio></td></tr>
+                    <tr><th>SCNet, streaming</th><td><audio controls preload="none" src="audio/malaika_27_35/streaming_SCNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/streaming_SCNet_acc.mp3"></audio></td></tr>
+                    <tr><th>MDX23C TFC-TDF-UNet, streaming</th><td><audio controls preload="none" src="audio/malaika_27_35/streaming_MDX23C_TFC_TDF_UNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/streaming_MDX23C_TFC_TDF_UNet_acc.mp3"></audio></td></tr>
+                    <tr><th>BandIt-BSRNN, streaming</th><td><audio controls preload="none" src="audio/malaika_27_35/streaming_BandIt_BSRNN_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/streaming_BandIt_BSRNN_acc.mp3"></audio></td></tr>
+                    <tr><th>DTTNet</th><td><audio controls preload="none" src="audio/malaika_27_35/DTTNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/DTTNet_acc.mp3"></audio></td></tr>
+                    <tr><th>SCNet</th><td><audio controls preload="none" src="audio/malaika_27_35/SCNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/SCNet_acc.mp3"></audio></td></tr>
+                    <tr><th>MDX23C TFC-TDF-UNet</th><td><audio controls preload="none" src="audio/malaika_27_35/MDX23C_TFC_TDF_UNet_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/MDX23C_TFC_TDF_UNet_acc.mp3"></audio></td></tr>
+                    <tr><th>BandIt-BSRNN</th><td><audio controls preload="none" src="audio/malaika_27_35/BandIt_BSRNN_vocals.mp3"></audio></td><td><audio controls preload="none" src="audio/malaika_27_35/BandIt_BSRNN_acc.mp3"></audio></td></tr>
                   </tbody>
                 </table>
             </section>
@@ -292,4 +292,3 @@
   </main>
 </body>
 </html>
-
